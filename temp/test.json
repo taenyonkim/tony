@@ -1,0 +1,38 @@
+{
+  "state": "completed",
+  "failed": false,
+  "request": {
+    "id": "1e42c03a-085e-4cf2-b67b-a6aa467c8eb1",
+    "data": {
+      "logs": [],
+      "type": "hellobot_ai_message",
+      "model": "azure-gpt-4o",
+      "taskId": "74695_20250829141025.987",
+      "context": {
+        "user": "- unknown\nName: unknown\nAge: Unknown\nBackground:\n- Unknown",
+        "persona": ""
+      },
+      "messages": [{ "role": "user", "content": "안녕" }],
+      "response": null,
+      "threadId": 74695,
+      "createdAt": "2025-08-29T05:10:25.987Z",
+      "messageId": 150917,
+      "personaId": 531,
+      "updatedAt": "2025-08-29T05:10:25.987Z",
+      "background": {
+        "user": "- unknown\nName: unknown\nAge: Unknown\nBackground:\n- Unknown",
+        "persona": ""
+      },
+      "renderingContext": {
+        "user": { "name": "unknown" },
+        "persona": { "name": "테스트" }
+      }
+    },
+    "name": "PERSONA_TASK-PROCESS_PERSONA_TASK"
+  },
+  "response": null,
+  "createdOn": "2025-08-29T05:10:25.985846+00:00",
+  "startedOn": "2025-08-29T05:10:26.238029+00:00",
+  "retryCount": 0,
+  "completedOn": "2025-08-29T05:10:36.869996+00:00"
+}
