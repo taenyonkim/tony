@@ -1,0 +1,674 @@
+[
+  {
+    "name": "event_date",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The date of the event.",
+    "fields": []
+  },
+  {
+    "name": "event_timestamp",
+    "mode": "NULLABLE",
+    "type": "TIMESTAMP",
+    "description": "The timestamp of the event.",
+    "fields": []
+  },
+  {
+    "name": "event_month",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The month of the event.",
+    "fields": []
+  },
+  {
+    "name": "event_week",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The week of the event.",
+    "fields": []
+  },
+  {
+    "name": "start_of_week",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The first date of the week.",
+    "fields": []
+  },
+  {
+    "name": "end_of_week",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The last date of the week.",
+    "fields": []
+  },
+  {
+    "name": "event_name",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The name of the event.",
+    "fields": []
+  },
+  {
+    "name": "user_id",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The unique identifier for the user.",
+    "fields": []
+  },
+  {
+    "name": "user_country",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The country of the user.",
+    "fields": []
+  },
+  {
+    "name": "platform",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The platform where the event occurred.",
+    "fields": []
+  },
+  {
+    "name": "user_gender",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The gender of the user.",
+    "fields": []
+  },
+  {
+    "name": "user_birth_year",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The birth year of the user.",
+    "fields": []
+  },
+  {
+    "name": "user_age",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The age of the user.",
+    "fields": []
+  },
+  {
+    "name": "user_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The type of user.",
+    "fields": []
+  },
+  {
+    "name": "user_created_at",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The date the user was created.",
+    "fields": []
+  },
+  {
+    "name": "user_is_new_month",
+    "mode": "NULLABLE",
+    "type": "BOOLEAN",
+    "description": "Indicates if the user is new for the month.",
+    "fields": []
+  },
+  {
+    "name": "user_is_new_week",
+    "mode": "NULLABLE",
+    "type": "BOOLEAN",
+    "description": "Indicates if the user is new for the week.",
+    "fields": []
+  },
+  {
+    "name": "chatbot_seq",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The sequence number of the chatbot.",
+    "fields": []
+  },
+  {
+    "name": "chatbot_name",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The name of the chatbot.",
+    "fields": []
+  },
+  {
+    "name": "chatbot_original_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The original type of chatbot used.",
+    "fields": []
+  },
+  {
+    "name": "menu_seq",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The sequence number of the menu.",
+    "fields": []
+  },
+  {
+    "name": "menu_name",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The name of the menu.",
+    "fields": []
+  },
+  {
+    "name": "current_heart_price",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The current price in hearts.",
+    "fields": []
+  },
+  {
+    "name": "heart_price",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The price in hearts.",
+    "fields": []
+  },
+  {
+    "name": "current_price",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The current price.",
+    "fields": []
+  },
+  {
+    "name": "price",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The price.",
+    "fields": []
+  },
+  {
+    "name": "spent_heart_coin",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The amount of heart coin spent.",
+    "fields": []
+  },
+  {
+    "name": "spent_bonus_heart_coin",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The amount of bonus heart coin spent.",
+    "fields": []
+  },
+  {
+    "name": "spent_cash_amount",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The amount of cash spent.",
+    "fields": []
+  },
+  {
+    "name": "spent_cash_amount_krw",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The amount of cash spent in Korean Won.",
+    "fields": []
+  },
+  {
+    "name": "spent_total_amount_krw",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The total amount spent in Korean Won.",
+    "fields": []
+  },
+  {
+    "name": "revenue_krw",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The revenue in Korean Won.",
+    "fields": []
+  },
+  {
+    "name": "currency",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The currency used for the transaction.",
+    "fields": []
+  },
+  {
+    "name": "event_value_in_currency",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The value of the event in its original currency.",
+    "fields": []
+  },
+  {
+    "name": "event_value_in_usd",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The value of the event in US dollars.",
+    "fields": []
+  },
+  {
+    "name": "product_id",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The unique identifier for the product.",
+    "fields": []
+  },
+  {
+    "name": "product_name",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The name of the product.",
+    "fields": []
+  },
+  {
+    "name": "product_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The type of product.",
+    "fields": []
+  },
+  {
+    "name": "transaction_id",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The unique identifier for the transaction.",
+    "fields": []
+  },
+  {
+    "name": "target",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The target segment.",
+    "fields": []
+  },
+  {
+    "name": "open_date",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The date the content was opened.",
+    "fields": []
+  },
+  {
+    "name": "chatbot_content_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The content type of the chatbot.",
+    "fields": []
+  },
+  {
+    "name": "skill_target_segment",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The target segment of the skill.",
+    "fields": []
+  },
+  {
+    "name": "skill_subject",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The subject of the skill.",
+    "fields": []
+  },
+  {
+    "name": "user_first_paid_menu_seq",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The sequence number of the user's first paid menu.",
+    "fields": []
+  },
+  {
+    "name": "user_first_paid_menu_name",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The name of the user's first paid menu.",
+    "fields": []
+  },
+  {
+    "name": "user_first_paid_menu_content_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The content type of the user's first paid menu.",
+    "fields": []
+  },
+  {
+    "name": "user_number_of_paid_date",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The number of days the user made a payment.",
+    "fields": []
+  },
+  {
+    "name": "user_total_revenue_krw",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The user's total revenue in Korean Won.",
+    "fields": []
+  },
+  {
+    "name": "user_total_revenue_krw_monthly_avg",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The average monthly revenue in Korean Won per user.",
+    "fields": []
+  },
+  {
+    "name": "user_total_day_visited",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The total number of days the user visited.",
+    "fields": []
+  },
+  {
+    "name": "user_total_day_visited_monthly_avg",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The average number of days the user visited per month.",
+    "fields": []
+  },
+  {
+    "name": "user_total_week_visited",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The total number of weeks the user visited.",
+    "fields": []
+  },
+  {
+    "name": "user_total_month_visited",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The total number of months the user visited.",
+    "fields": []
+  },
+  {
+    "name": "user_first_paid_date",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The date of the user's first payment.",
+    "fields": []
+  },
+  {
+    "name": "user_second_paid_date",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The date of the user's second payment.",
+    "fields": []
+  },
+  {
+    "name": "user_last_paid_date",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The last date the user made a payment.",
+    "fields": []
+  },
+  {
+    "name": "user_last_visit_date",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The last date the user visited.",
+    "fields": []
+  },
+  {
+    "name": "user_total_revenue_krw_saju",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The user's total revenue in Korean Won from saju.",
+    "fields": []
+  },
+  {
+    "name": "user_total_revenue_krw_tarot",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The user's total revenue in Korean Won from tarot.",
+    "fields": []
+  },
+  {
+    "name": "user_total_revenue_krw_else",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The user's total revenue in Korean Won from other sources.",
+    "fields": []
+  },
+  {
+    "name": "platform_appweb",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "Indicates if the platform is app or web.",
+    "fields": []
+  },
+  {
+    "name": "user_new_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The type of new user.",
+    "fields": []
+  },
+  {
+    "name": "cohort_week",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The week the user was acquired.",
+    "fields": []
+  },
+  {
+    "name": "cohort_start_of_week",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The first date of the week the user was acquired.",
+    "fields": []
+  },
+  {
+    "name": "cohort_end_of_week",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The last date of the week the user was acquired.",
+    "fields": []
+  },
+  {
+    "name": "cohort_month",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The month the user was acquired.",
+    "fields": []
+  },
+  {
+    "name": "age_group",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The age group of the user.",
+    "fields": []
+  },
+  {
+    "name": "age_generation",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The age generation of the user.",
+    "fields": []
+  },
+  {
+    "name": "acc_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The account type.",
+    "fields": []
+  },
+  {
+    "name": "pay_type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The type of payment used.",
+    "fields": []
+  },
+  {
+    "name": "event_date_diff",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The difference in days from a specific date to the event date.",
+    "fields": []
+  },
+  {
+    "name": "funnel_from_home_banner",
+    "mode": "NULLABLE",
+    "type": "BOOLEAN",
+    "description": "Indicates if the user came through the home banner funnel.",
+    "fields": []
+  },
+  {
+    "name": "funnel_from_home_section",
+    "mode": "NULLABLE",
+    "type": "BOOLEAN",
+    "description": "Indicates if the user came through the home section funnel.",
+    "fields": []
+  },
+  {
+    "name": "funnel_from_home_category",
+    "mode": "NULLABLE",
+    "type": "BOOLEAN",
+    "description": "Indicates if the user came through the home category funnel.",
+    "fields": []
+  },
+  {
+    "name": "funnel_from_search_result",
+    "mode": "NULLABLE",
+    "type": "BOOLEAN",
+    "description": "Indicates if the user came through the search result funnel.",
+    "fields": []
+  },
+  {
+    "name": "event_weekday",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The weekday of the event.",
+    "fields": []
+  },
+  {
+    "name": "rfm_last_pay_date",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The last date the user made a payment.",
+    "fields": []
+  },
+  {
+    "name": "rfm_last_engage_date",
+    "mode": "NULLABLE",
+    "type": "DATE",
+    "description": "The last date the user engaged.",
+    "fields": []
+  },
+  {
+    "name": "rfm_R_pay",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The recency score based on payment.",
+    "fields": []
+  },
+  {
+    "name": "rfm_F_pay",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The frequency score based on payment.",
+    "fields": []
+  },
+  {
+    "name": "rfm_F_pay_freq",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The frequency score based on payment frequency.",
+    "fields": []
+  },
+  {
+    "name": "rfm_M",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "The monetary value.",
+    "fields": []
+  },
+  {
+    "name": "rfm_R_engage",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The recency based on engagement.",
+    "fields": []
+  },
+  {
+    "name": "rfm_F_engage",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The frequency based on engagement.",
+    "fields": []
+  },
+  {
+    "name": "rfm_F_engage_freq",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The frequency score based on engagement.",
+    "fields": []
+  },
+  {
+    "name": "rfm_R_pay_score",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The recency score based on payment.",
+    "fields": []
+  },
+  {
+    "name": "rfm_F_pay_score",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The frequency score based on payment.",
+    "fields": []
+  },
+  {
+    "name": "rfm_M_score",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The monetary score.",
+    "fields": []
+  },
+  {
+    "name": "rfm_R_engage_score",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The recency score based on engagement.",
+    "fields": []
+  },
+  {
+    "name": "rfm_F_engage_score",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "The frequency score based on engagement.",
+    "fields": []
+  },
+  {
+    "name": "rfm_payment_rfm_score",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The RFM score based on payment.",
+    "fields": []
+  },
+  {
+    "name": "rfm_engagement_rf_score",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The RF score based on engagement.",
+    "fields": []
+  },
+  {
+    "name": "rfm_payment_segment",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The segment based on payment RFM.",
+    "fields": []
+  },
+  {
+    "name": "viewed_daily_tab",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "Number of times the daily tab was viewed.",
+    "fields": []
+  },
+  {
+    "name": "viewed_daily_detail",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": "Number of times the daily detail was viewed.",
+    "fields": []
+  }
+]
