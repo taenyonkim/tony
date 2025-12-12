@@ -5,7 +5,7 @@ import os
 # 2. Scenario-Based Intent Analysis Logic
 def analyze_user_persona(title):
     title = str(title).strip()
-    
+
     # --- Step 1: 소거법(Elimination Method) 적용 ---
     # 프롬프트 명세에 따라 기본값은 ["LOVE_SINGLE", "LOVE_COUPLE"]에서 시작
     scope = set(["LOVE_SINGLE", "LOVE_COUPLE"])
@@ -45,7 +45,7 @@ def analyze_user_persona(title):
     # --- Step 3: 비연애 콘텐츠 체크 (재물, 직업, 신년운세) ---
     # 프롬프트 명세: 연애와 무관한 콘텐츠는 ["ALL"]로 설정
     is_non_love_content = (
-        not any(k in title for k in ["연애", "사랑", "결혼", "궁합", "속마음", "재회", "솔로", "짝사랑", "부부", "이혼"]) and
+        not any(k in title for k in ["연애", "사랑", "결혼", "궁합", "속마음", "재회", "솔로", "짝사랑", "부부", "이혼", "그 사람"]) and
         any(k in title for k in ["재물", "금전", "돈", "부자", "로또", "직업", "취업", "사업", "신년", "토정비결", "202", "대운", "총운", "퇴사", "이직"
             # 예외케이스 처리용
             "사주팔자", "내 인생 언제", "내 운이 트이는", "일생 풀이", "인생 역전", "인생역전", "팔자가 바뀌는", "인생 피는"])
@@ -56,14 +56,14 @@ def analyze_user_persona(title):
 
     # --- Step 4: Determine Tags (Interest) based on Intent ---
     tags = set()
-    
+
     # [FAMILY]
     if any(k in title for k in ["임신", "자녀", "아기", "출산", "가족", "내 아이"]): tags.add("FAMILY")
-    
+
     # [WEALTH / CAREER / NEW_YEAR]
     if any(k in title for k in ["재물", "금전", "돈", "부자", "로또", "대박", "적금", "잔고", "통장", "재산"]): tags.add("WEALTH")
     if any(k in title for k in ["직업", "취업", "합격", "승진", "사업", "이직", "사장", "커리어", "퇴사", "직장", "동료", "시험", "면접", "회사", "재수", "수능"]): tags.add("CAREER")
-    if any(k in title for k in ["신년", "202", "토정비결", "년 운세", "새해", "하반기", 
+    if any(k in title for k in ["신년", "202", "토정비결", "년 운세", "새해", "하반기",
         "20년", "21년", "22년", "23년", "24년", "25년", "26년", "27년", "28년", "29년", "30년"]): tags.add("NEW_YEAR")
 
     # [LOVE SPECIFIC]
@@ -75,11 +75,11 @@ def analyze_user_persona(title):
 
 # LOVE_CRISIS (위기 관련)
     # 프롬프트 명세에는 스코프 제한이 없음
-    if any(k in title for k in ["권태기", "이별수", "갈등", "바람", "위기", "이혼", "불안", 
+    if any(k in title for k in ["권태기", "이별수", "갈등", "바람", "위기", "이혼", "불안",
         # 예외케이스 처리용
         "헤어져도 될까"]):
         tags.add("LOVE_CRISIS")
-        
+
     # LOVE_MARRIAGE (결혼 관련)
     if any(k in title for k in ["결혼", "배우자", "혼인", "웨딩", "남편", "아내", "시집", "장가"]):
         tags.add("LOVE_MARRIAGE")
@@ -98,28 +98,34 @@ def analyze_user_persona(title):
         "솔로", "새로운 만남", "새로운", "도화", "짝사랑", "썸", "누구일까", "누굴까", "누구",
         "나타날", "탈출", "언제", "생길까", "고백", "사귈 수 있을까", "유혹할"
         # 예외케이스 처리용
-        "다가올 인연", "지금 날 간절히 원하는", "천년배필", "언제 만날까", "놓치면 안 될 결혼 상대", "만나게 될", "우리 사이", "미래의 연인", "소개팅"
+        "다가올 인연", "지금 날", "천년배필", "언제 만날까", "놓치면 안 될 결혼 상대", "만나게 될", "우리 사이", "미래의 연인", "소개팅"
     ]):
         tags.add("LOVE_NEW")
-        
-    # LOVE_MATCH (궁합/속마음)
-    # 프롬프트 명세: 싱글/커플 모두 가능
-    if any(k in title for k in ["궁합", "속마음", "진심", "좋아할까", "관계 점수", "관계", "애정", "케미", "사귈", "사귀", "시그널",
-        "그 사람", "나 보고 싶을까", "전연인 어떻게", "우리 얼마나"]):
+
+    # LOVE_MIND (속마음/진심)
+    # 프롬프트 명세: 속마음, 진심, 감정, 좋아할까, 나를 어떻게, 상대방 마음, 심리
+    if any(k in title for k in ["속마음", "진심", "감정", "좋아할까", "나를 어떻게", "상대방 마음", "심리",
+        "날 사랑", "날 좋아", "나 보고 싶을까", "마음", "느낌", "관심"]):
+        tags.add("LOVE_MIND")
+
+    # LOVE_MATCH (궁합/관계)
+    # 프롬프트 명세: 궁합, 애정도, 관계 점수, 케미, 상성, 관계 발전
+    if any(k in title for k in ["궁합", "관계 점수", "관계", "애정", "케미", "사귈", "사귀", "시그널",
+        "상성", "관계 발전", "우리 얼마나", "잘 맞", "그 사람"]):
         tags.add("LOVE_MATCH")
-        
+
     # LOVE_GENERAL (연애운 전반)
     # 프롬프트 명세: 연애운, 사랑운, 운명의 상대 (구체적 목적 없이 전반적인 운을 볼 때)
     if any(k in title for k in ["연애운", "사랑운", "운명의 상대", "연애", "사랑", "운명", "인연"]):
         # 다른 구체적인 Love 태그가 없을 때만 추가 (코드의 추가 로직 유지)
-        if not (tags & {"LOVE_NEW", "LOVE_REUNION", "LOVE_MATCH", "LOVE_CRISIS", "LOVE_MARRIAGE"}):
+        if not (tags & {"LOVE_NEW", "LOVE_REUNION", "LOVE_MIND", "LOVE_MATCH", "LOVE_CRISIS", "LOVE_MARRIAGE"}):
             tags.add("LOVE_GENERAL")
 
     # OVERALL (종합운)
     # 프롬프트 명세: 총운, 인생, 사주팔자, 운명, 종합 보고서
-    if any(k in title for k in ["총운", "인생", "사주팔자", "운세", "사주", "운명", "종합", "통합", "보고서"]):
+    if any(k in title for k in ["총운", "인생", "사주팔자", "운세", "사주", "운명", "종합", "통합", "보고서", "일생 풀이"]):
         # 태그가 없거나 보고서/통합이 있을 때 추가 (코드의 추가 로직 유지)
-        if not tags or "보고서" in title or "통합" in title or "사주팔자" in title or "종합" in title:
+        if not tags or "보고서" in title or "통합" in title or "사주팔자" in title or "종합" in title or "일생 풀이" in title:
             tags.add("OVERALL")
 
 

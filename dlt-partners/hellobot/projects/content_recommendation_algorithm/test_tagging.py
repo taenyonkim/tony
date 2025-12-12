@@ -47,6 +47,56 @@ for i, title in enumerate(test_cases):
             print(f"   예상 Tags: {expected_tags}")
 
 print("\n" + "=" * 80)
+print("LOVE_MIND 테스트 케이스")
+print("=" * 80)
+
+# LOVE_MIND 테스트 케이스 추가
+love_mind_cases = [
+    ("그의 속마음: 나를 진짜 좋아할까?", "LOVE_SINGLE, LOVE_COUPLE", ["LOVE_MIND"]),
+    ("연인의 진심 확인 타로", "LOVE_COUPLE", ["LOVE_MIND", "LOVE_GENERAL"]),
+    ("상대방 마음 읽기", "LOVE_SINGLE, LOVE_COUPLE", ["LOVE_MIND"]),
+    ("나를 어떻게 생각할까", "LOVE_SINGLE, LOVE_COUPLE", ["LOVE_MIND"]),
+    ("그 사람의 속마음", "LOVE_SINGLE, LOVE_COUPLE", ["LOVE_MIND"]),
+]
+
+print("\n[LOVE_MIND 태그 테스트]")
+for title, expected_scope, expected_tags_list in love_mind_cases:
+    scope, tags = analyze_user_persona(title)
+    tags_set = set(tags.split(", ")) if tags else set()
+    expected_tags_set = set(expected_tags_list)
+
+    # LOVE_MIND가 포함되어 있는지 확인
+    if "LOVE_MIND" in tags_set:
+        print(f"✅ {title}: LOVE_MIND 태그 포함")
+        print(f"   Scope: {scope}, Tags: {tags}")
+    else:
+        print(f"❌ {title}: LOVE_MIND 태그 누락!")
+        print(f"   실제 - Scope: {scope}, Tags: {tags}")
+        print(f"   예상 - Scope: {expected_scope}, Tags 포함: {', '.join(expected_tags_list)}")
+
+print("\n" + "=" * 80)
+print("LOVE_MATCH vs LOVE_MIND 구분 테스트")
+print("=" * 80)
+
+# LOVE_MATCH와 LOVE_MIND 구분 테스트
+distinction_cases = [
+    ("우리 궁합 점수는 몇 점?", "LOVE_MATCH"),  # 궁합 -> MATCH
+    ("상대방의 속마음 알아보기", "LOVE_MIND"),  # 속마음 -> MIND
+    ("우리 케미가 좋을까?", "LOVE_MATCH"),  # 케미 -> MATCH
+    ("그가 날 사랑할까?", "LOVE_MIND"),  # 감정 -> MIND
+    ("우리 관계 발전 가능성", "LOVE_MATCH"),  # 관계 발전 -> MATCH
+    ("진심인지 확인하기", "LOVE_MIND"),  # 진심 -> MIND
+]
+
+print("\n[LOVE_MATCH vs LOVE_MIND 구분]")
+for title, expected_tag in distinction_cases:
+    scope, tags = analyze_user_persona(title)
+    if expected_tag in tags:
+        print(f"✅ {title}: {expected_tag} 올바르게 태깅")
+    else:
+        print(f"❌ {title}: {expected_tag} 예상했으나 실제 태그: {tags}")
+
+print("\n" + "=" * 80)
 print("추가 테스트 케이스")
 print("=" * 80)
 
