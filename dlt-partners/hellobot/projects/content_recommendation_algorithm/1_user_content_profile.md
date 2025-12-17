@@ -69,6 +69,7 @@
 | :--- | :--- | :--- |
 | **연애 (특수)** | **`LOVE_NEW`** | **연애_새로운만남** (솔로 탈출, 짝사랑, 도화살) |
 | | **`LOVE_REUNION`** | **연애_재회** (전 연인, 미련, 이별 후 회복) |
+| | **`LOVE_MIND`** | **연애_속마음** (상대방 마음, 감정 상태, 진심 확인) |
 | | **`LOVE_MATCH`** | **연애_궁합관계** (속마음, 궁합, 애정전선) |
 | | **`LOVE_MARRIAGE`** | **연애_결혼** (결혼 시기, 결혼 궁합, 배우자 운) |
 | | **`LOVE_CRISIS`** | **연애_위기갈등** (권태기, 이별수, 외도) |
@@ -97,7 +98,7 @@
 
   * **A그룹: 스나이퍼 (Sniper - 맞춤형)**
       * 조건: `Content.Target_Tags`가 `User.Interest`와 일치하는 경우.
-      * **확장 규칙:** 사용자가 연애 관련 Interest(`NEW`, `REU`, `MAT`, `MAR`, `CRI`)를 가진 경우, **`LOVE_GENERAL`** 태그 콘텐츠도 스나이퍼 그룹에 포함.
+      * **확장 규칙:** 사용자가 연애 관련 Interest(`NEW`, `REU`, `MIND`, `MAT`, `MAR`, `CRI`)를 가진 경우, **`LOVE_GENERAL`** 태그 콘텐츠도 스나이퍼 그룹에 포함.
   * **B그룹: 제너럴 (General - 범용형)**
       * 조건: `Content.Target_Tags`에 `NEW_YEAR`, `OVERALL`, `WEALTH`, `CAREER` 등이 포함된 경우.
 
@@ -123,7 +124,8 @@ $$Score = (Sales \times 0.6) + (Views \times 0.2) + (NewBooster \times 0.2)$$
 | :--- | :--- | :--- | :--- |
 | **1. 재회 희망 솔로** | Status: `SINGLE`<br>Interest: `REUNION` | 재회 가능성(`REUNION`)을 최상단에, 운명의 흐름(`GENERAL`)과 마음 정리(`OVERALL`)를 서브로 추천. | 1. 재회 사주<br>2. 2026 신년운세<br>3. D-DAY 재회 타로 |
 | **2. 결혼 고민 커플** | Status: `COUPLE`<br>Interest: `MARRIAGE` | 결혼 궁합/시기(`MARRIAGE`) 집중 공략. 단순히 좋은지(`MATCH`)보다 결혼 성사 여부를 강조. | 1. 결혼 OX 궁합<br>2. 우리 커플 삼단궁합<br>3. 25년 재물운 |
-| **3. 무기력한 솔로** | Status: `SINGLE`<br>Interest: `NEW` | 당장의 연애(`NEW`)보다 내 팔자에 연애가 있는지(`GENERAL`) 확인시켜 주는 콘텐츠 비중 확대. | 1. 내 사주에 연애상대 몇 명?<br>2. 내 팔자의 천년배필<br>3. 사주 직업 컨설팅 |
+| **3. 상대 마음 궁금한 커플** | Status: `COUPLE`<br>Interest: `MIND` | 상대방의 진심과 속마음(`MIND`) 파악에 집중. 궁합(`MATCH`)보다 현재 감정 상태를 우선 확인. | 1. 그의 속마음 타로<br>2. 연인의 진심 확인<br>3. 애정운 종합 |
+| **4. 무기력한 솔로** | Status: `SINGLE`<br>Interest: `NEW` | 당장의 연애(`NEW`)보다 내 팔자에 연애가 있는지(`GENERAL`) 확인시켜 주는 콘텐츠 비중 확대. | 1. 내 사주에 연애상대 몇 명?<br>2. 내 팔자의 천년배필<br>3. 사주 직업 컨설팅 |
 
 -----
 
